@@ -7,6 +7,8 @@ cudnn=${3:-"8"}
 ubuntu_mirror=${4:-""}
 pypi_mirror=${5:-""}
 
+docker_username=${6:-"qqlzfmn"}
+
 if [[ -n $ubuntu_mirror ]]; then
     prefix="cn-"
 fi
@@ -15,7 +17,7 @@ tag=${prefix}torch${torch}-cuda${cuda}-cudnn${cudnn}
 echo Buliding image with tag: $tag
 
 docker build \
-    -t sidecus/vscode-cuda:$tag \
+    -t ${docker_username}/vscode-cuda:$tag \
     --build-arg TORCH_VERSION=$torch \
     --build-arg CUDA_VERSION=$cuda \
     --build-arg CUDNN_VERSION=$cudnn \
@@ -23,4 +25,4 @@ docker build \
     --build-arg PYPI_MIRROR="$pypi_mirror" \
     .
 
-echo Successfully built image: sidecus/vscode-cuda:$tag
+echo Successfully built image: ${docker_username}/vscode-cuda:$tag
