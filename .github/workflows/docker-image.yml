@@ -39,7 +39,7 @@ jobs:
           context: .
           file: ./Dockerfile
           push: true
-          tags: ${{ secrets.DOCKER_USERNAME }}/vscode-cuda:torch${{ vars.TORCH_VERSION }}-cuda${{ vars.CUDA_VERSION }}-cudnn${{ vars.CUDNN_VERSION }}
+          tags: ${{ secrets.DOCKER_USERNAME }}/vscode-cuda:torch${{ vars.TORCH_VERSION }}-cuda${{ vars.CUDA_VERSION }}-cudnn${{ vars.CUDNN_VERSION }}-devel
           build-args: |
             TORCH_VERSION=${{ vars.TORCH_VERSION }}
             CUDA_VERSION=${{ vars.CUDA_VERSION }}
@@ -52,7 +52,7 @@ jobs:
           context: .
           file: ./Dockerfile
           push: true
-          tags: ${{ secrets.DOCKER_USERNAME }}/vscode-cuda:cn-torch${{ vars.TORCH_VERSION }}-cuda${{ vars.CUDA_VERSION }}-cudnn${{ vars.CUDNN_VERSION }}
+          tags: ${{ secrets.DOCKER_USERNAME }}/vscode-cuda:cn-torch${{ vars.TORCH_VERSION }}-cuda${{ vars.CUDA_VERSION }}-cudnn${{ vars.CUDNN_VERSION }}-devel
           build-args: |
             TORCH_VERSION=${{ vars.TORCH_VERSION }}
             CUDA_VERSION=${{ vars.CUDA_VERSION }}
