@@ -31,7 +31,7 @@ jobs:
         id: meta
         uses: docker/metadata-action@9ec57ed1fcdbf14dcef7dfbe97b2010124a938b7
         with:
-          images: sidecus/vscode-cuda
+          images: ${{ secrets.DOCKER_USERNAME }}/vscode-cuda
 
       - name: Build and push Docker image
         uses: docker/build-push-action@3b5e8027fcad23fda98b2e3ac259d8d67585f671
@@ -39,7 +39,7 @@ jobs:
           context: .
           file: ./Dockerfile
           push: true
-          tags: sidecus/vscode-cuda:torch${{ vars.TORCH_VERSION }}-cuda${{ vars.CUDA_VERSION }}-cudnn${{ vars.CUDNN_VERSION }}
+          tags: ${{ secrets.DOCKER_USERNAME }}/vscode-cuda:torch${{ vars.TORCH_VERSION }}-cuda${{ vars.CUDA_VERSION }}-cudnn${{ vars.CUDNN_VERSION }}
           build-args: |
             TORCH_VERSION=${{ vars.TORCH_VERSION }}
             CUDA_VERSION=${{ vars.CUDA_VERSION }}
@@ -52,7 +52,7 @@ jobs:
           context: .
           file: ./Dockerfile
           push: true
-          tags: sidecus/vscode-cuda:cn-torch${{ vars.TORCH_VERSION }}-cuda${{ vars.CUDA_VERSION }}-cudnn${{ vars.CUDNN_VERSION }}
+          tags: ${{ secrets.DOCKER_USERNAME }}/vscode-cuda:cn-torch${{ vars.TORCH_VERSION }}-cuda${{ vars.CUDA_VERSION }}-cudnn${{ vars.CUDNN_VERSION }}
           build-args: |
             TORCH_VERSION=${{ vars.TORCH_VERSION }}
             CUDA_VERSION=${{ vars.CUDA_VERSION }}
