@@ -7,4 +7,6 @@ cudnn=${3:-"8"}
 ubuntu_mirror="mirrors.bfsu.edu.cn"
 pypi_mirror="https://mirrors.bfsu.edu.cn/pypi/web/simple/"
 
-./build.sh $torch $cuda $cudnn $ubuntu_mirror $pypi_mirror
+docker_username=${6:-"qqlzfmn"}
+
+./build.sh $torch $cuda $cudnn $ubuntu_mirror $pypi_mirror $docker_username
