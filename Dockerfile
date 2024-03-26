@@ -3,7 +3,7 @@ ARG TORCH_VERSION="2.1.2"
 ARG CUDA_VERSION="11.8"
 ARG CUDNN_VERSION="8"
 
-FROM pytorch/pytorch:${TORCH_VERSION}-cuda${CUDA_VERSION}-cudnn${CUDNN_VERSION}-runtime
+FROM pytorch/pytorch:${TORCH_VERSION}-cuda${CUDA_VERSION}-cudnn${CUDNN_VERSION}-devel
 
 ENV PATH="/usr/local/bin:$PATH"
 ENV LANG="C.UTF-8"
