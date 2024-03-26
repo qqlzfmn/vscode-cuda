@@ -13,7 +13,7 @@ if [[ -n $ubuntu_mirror ]]; then
     prefix="cn-"
 fi
 
-tag=${prefix}torch${torch}-cuda${cuda}-cudnn${cudnn}
+tag=${prefix}torch${torch}-cuda${cuda}-cudnn${cudnn}-devel
 echo Buliding image with tag: $tag
 
 docker build \
